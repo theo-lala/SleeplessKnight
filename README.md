@@ -1,9 +1,11 @@
 # CGRA 252 Game Engine Programming
 
-## Theophilus Timothy Lala
+## Your name
+Theophilus Timothy Lala
 ## Assignment 1
 
-## MurderMystery
+## Title of the Game    
+MurderMystery
 
 
 Link to video (onedrive/vimeo/youtube/googledrive other video service) showing the prototype/game ( approx. 4-9 mins )
