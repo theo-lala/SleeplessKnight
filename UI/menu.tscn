@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1bt7arhxnrac"]
+
+[ext_resource type="Theme" uid="uid://qvl6rxkkuk6l" path="res://UI/Default.tres" id="1_adxht"]
+[ext_resource type="PackedScene" uid="uid://cmunxm2wyolvt" path="res://UI/play.tscn" id="1_bgu83"]
+
+[node name="Menu" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -169.0
+offset_right = 88.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" parent="." instance=ExtResource("1_bgu83")]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_adxht")
+text = "OPTION"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_adxht")
+text = "QUIT"

@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://85sp83k4dmsn"]
+
+[ext_resource type="Theme" uid="uid://qvl6rxkkuk6l" path="res://UI/Default.tres" id="1_ga6g2"]
+[ext_resource type="Script" path="res://Screens/main_screen.gd" id="2_dtg81"]
+[ext_resource type="Texture2D" uid="uid://cf2xpldaov23h" path="res://PaperUIKit/Pngs/LargeBackground.png" id="2_l3fx3"]
+[ext_resource type="PackedScene" uid="uid://sse34854bq01" path="res://UI/title.tscn" id="3_etujp"]
+[ext_resource type="PackedScene" uid="uid://clriw4kpfmarr" path="res://UI/ChangeSceneButton.tscn" id="4_lthgl"]
+[ext_resource type="PackedScene" uid="uid://k4x41tax8vkg" path="res://UI/options.tscn" id="5_3t6lu"]
+[ext_resource type="PackedScene" uid="uid://cvjlh5jp6ulp0" path="res://UI/quit.tscn" id="6_prno4"]
+[ext_resource type="AudioStream" uid="uid://6wc762ud1bxb" path="res://Assets/Audio/Music/Rolemusic - The Black Kitty.mp3" id="8_lx4gw"]
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ga6g2")
+script = ExtResource("2_dtg81")
+
+[node name="LargeBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ga6g2")
+texture = ExtResource("2_l3fx3")
+expand_mode = 1
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -136.0
+offset_right = 117.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" parent="Menu" instance=ExtResource("4_lthgl")]
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 15
+icon_alignment = 1
+
+[node name="Options" parent="Menu" instance=ExtResource("5_3t6lu")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 15
+icon_alignment = 1
+
+[node name="Quit" parent="Menu" instance=ExtResource("6_prno4")]
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 15
+icon_alignment = 1
+
+[node name="Title" parent="." instance=ExtResource("3_etujp")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.178
+anchor_bottom = 0.178
+offset_left = -217.0
+offset_top = -29.344
+offset_right = 216.0
+offset_bottom = 29.656
+theme_override_font_sizes/font_size = 10
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lx4gw")
+volume_db = -15.0

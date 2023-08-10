@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://dldgvpnepw4q3"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_f3vc1"]
+[ext_resource type="Script" path="res://UI/Score.gd" id="2_ysfxo"]
+[ext_resource type="Theme" uid="uid://qvl6rxkkuk6l" path="res://UI/Default.tres" id="3_ytgp2"]
+[ext_resource type="PackedScene" uid="uid://cvjlh5jp6ulp0" path="res://UI/quit.tscn" id="4_hleyc"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_f3vc1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ytgp2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("2_ysfxo")
+
+[node name="Options3" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ytgp2")
+
+[node name="ColorRect" type="ColorRect" parent="Control/Options3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.411765)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Options3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_right = 256
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Options3/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/Options3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="MusicLabel" type="Label" parent="Control/Options3/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "MUSIC
+"
+
+[node name="MusicSlider" type="HSlider" parent="Control/Options3/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_ytgp2")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLabel2" type="Label" parent="Control/Options3/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXSlider2" type="HSlider" parent="Control/Options3/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Quit" parent="Control/Options3" instance=ExtResource("4_hleyc")]
+layout_mode = 2
+anchor_left = 0.488
+anchor_top = 0.723
+anchor_right = 0.488
+anchor_bottom = 0.723
+offset_left = -66.176
+offset_top = -30.504
+offset_right = 65.824
+offset_bottom = 30.496
+
+[connection signal="value_changed" from="Control/Options3/MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Control/Options3/MarginContainer/VBoxContainer/GridContainer/SFXSlider2" to="." method="_on_sfx_slider_2_value_changed"]

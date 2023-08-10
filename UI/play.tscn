@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmunxm2wyolvt"]
+
+[ext_resource type="Theme" uid="uid://qvl6rxkkuk6l" path="res://UI/Default.tres" id="1_ukpe2"]
+
+[node name="Play" type="Button"]
+size_flags_vertical = 3
+theme = ExtResource("1_ukpe2")
+text = "PLAY"

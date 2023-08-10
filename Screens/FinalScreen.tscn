@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://8d8mv5h4evik"]
+
+[ext_resource type="Texture2D" uid="uid://di8au6egs7l2t" path="res://Screens/30856930358_d7725b28c0_o.jpg" id="1_airxf"]
+[ext_resource type="PackedScene" uid="uid://chrhhux3qpfjw" path="res://UI/restart.tscn" id="3_o0n4x"]
+[ext_resource type="Theme" uid="uid://qvl6rxkkuk6l" path="res://UI/Default.tres" id="4_6r75d"]
+[ext_resource type="PackedScene" uid="uid://cvjlh5jp6ulp0" path="res://UI/quit.tscn" id="4_yps5v"]
+[ext_resource type="Script" path="res://UI/restart.gd" id="5_3tb21"]
+
+[node name="FinalScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_airxf")
+
+[node name="Quit" parent="." instance=ExtResource("4_yps5v")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253
+anchor_top = 0.4
+anchor_right = 0.253
+anchor_bottom = 0.4
+offset_left = -65.456
+offset_top = -30.2
+offset_right = 66.544
+offset_bottom = 30.8
+
+[node name="Restart" parent="." instance=ExtResource("3_o0n4x")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.252
+anchor_top = 0.294
+anchor_right = 0.252
+anchor_bottom = 0.294
+offset_left = -111.304
+offset_top = -28.512
+offset_right = 119.696
+offset_bottom = 32.488
+theme = ExtResource("4_6r75d")
+text = "Restart"
+script = ExtResource("5_3tb21")
+
+[connection signal="button_up" from="Restart" to="Restart" method="_on_button_up"]

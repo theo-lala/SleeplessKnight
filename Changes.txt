@@ -1,0 +1,35 @@
+requirements:
+- Change something in the control system for a character on screen
+- Have a character interact with objects in the world
+- Change something about the animation of a character based on movement
+- Change game "score" and display it on screen (this could be time or other updating variable)
+- Manage assets in the level - spawn at least one object
+- Control NPCs behaviour. (anything from simple door opening, to full AI behaviour)
+- Play a sound
+- Restart a level
+- Show a final screen
+- Create a settings menu with at least a slider and a toggle interaction
+- Make a video to show the project and your code contribution ( < 10 mins )
+
+game
+- main screen
+- parallax bg got creative stacking parallax
+- option menu
+- audio music seperate sfx
+- pause
+- change audio slider
+
+
+character
+- character has state
+- state connected to animation tree, and animation (code logic easier, but harder to implement at first)
+- player can hit
+- enemy has health (has hit state)
+- enemy die = score +
+
+
+challanges
+- spawn location messes up the parallax bg
+- pause
+
+
