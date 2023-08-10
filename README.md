@@ -9,6 +9,7 @@ Sleeples Knight
 
 
 Link to video (onedrive/vimeo/youtube/googledrive other video service) showing the prototype/game ( approx. 4-9 mins )
+https://drive.google.com/file/d/1d_p0DDFkSigSuSGLNJQtjPf1zhwtqxGr/view?usp=sharing
 
 # Game Description
 this is an action 2d scroller game where you will have enemies with a score system based on how many enemy you kill. once the score gets to a certain number, you win.
